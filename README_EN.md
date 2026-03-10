@@ -20,9 +20,25 @@ An intelligent PDF document splitting tool based on Large Language Models (LLM) 
 
 ## 📦 Installation
 
-### Install Dependencies
+### Method 1: Install from PyPI (Recommended)
+
+The easiest and quickest way to install:
 
 ```bash
+pip install pdf-intelligent-splitter
+```
+
+After installation, you can use the `pdf-split` command directly:
+
+```bash
+pdf-split input.pdf -o ./result --document-type legal
+```
+
+### Method 2: Install from Source
+
+```bash
+git clone https://github.com/loudlous/pdf-intelligent-splitter.git
+cd pdf-intelligent-splitter
 pip install -r requirements.txt
 ```
 
@@ -77,6 +93,12 @@ If API keys are not set, the tool will raise an error when attempting to use LLM
 
 ### Basic Usage
 
+**If installed from PyPI:**
+```bash
+pdf-split <input.pdf> -o <output_dir>
+```
+
+**If installed from source:**
 ```bash
 python pdf-split.py <input.pdf> -o <output_dir>
 ```
@@ -96,17 +118,20 @@ python pdf-split.py <input.pdf> \
 ### Examples
 
 ```bash
-# Basic splitting
-python pdf-split.py document.pdf -o ./result
+# Basic splitting (after PyPI installation)
+pdf-split document.pdf -o ./result
 
 # Specify document type
-python pdf-split.py academic_papers.pdf -o ./result --document-type academic
+pdf-split academic_papers.pdf -o ./result --document-type academic
 
 # Use existing OCR results (skip OCR step)
-python pdf-split.py document.pdf -o ./result --ocr-json ./ocr_result.json
+pdf-split document.pdf -o ./result --ocr-json ./ocr_result.json
 
 # Large file optimization (reduce memory usage)
-python pdf-split.py large_document.pdf -o ./result --image-scale 0.5
+pdf-split large_document.pdf -o ./result --image-scale 0.5
+
+# Run from source (if cloned from GitHub)
+python pdf-split.py document.pdf -o ./result
 ```
 
 ## 📤 Output
@@ -227,9 +252,16 @@ You can modify these configurations in the code to adapt to different document t
 3. **Page Coverage**: The tool validates that all pages are covered without gaps or overlaps
 4. **File Naming**: Special characters in filenames are replaced with underscores to ensure filesystem compatibility
 
+## 📦 PyPI Package Information
+
+- **PyPI Package Name**: `pdf-intelligent-splitter`
+- **PyPI URL**: https://pypi.org/project/pdf-intelligent-splitter/
+- **Install Command**: `pip install pdf-intelligent-splitter`
+- **GitHub URL**: https://github.com/loudlous/pdf-intelligent-splitter
+
 ## 📄 License
 
-This tool is provided as-is for open-source use. Please refer to the LICENSE file for details.
+MIT License - See [LICENSE](LICENSE) file for details
 
 ## 📚 Documentation
 

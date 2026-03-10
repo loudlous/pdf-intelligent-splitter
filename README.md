@@ -18,9 +18,27 @@
 - 支持GPU（可选，自动检测）
 - 足够的磁盘空间存储OCR结果和拆分后的PDF
 
-## 安装依赖
+## 安装
+
+### 方式一：从PyPI安装（推荐）
+
+最简单快捷的安装方式：
 
 ```bash
+pip install pdf-intelligent-splitter
+```
+
+安装完成后，可以直接使用 `pdf-split` 命令：
+
+```bash
+pdf-split input.pdf -o ./result --document-type legal
+```
+
+### 方式二：从源码安装
+
+```bash
+git clone https://github.com/loudlous/pdf-intelligent-splitter.git
+cd pdf-intelligent-splitter
 pip install -r requirements.txt
 ```
 
@@ -70,6 +88,12 @@ DEEPSEEK_API_KEY=your_deepseek_key_here
 
 ### 基本用法
 
+**如果从PyPI安装：**
+```bash
+pdf-split <input.pdf> -o <output_dir>
+```
+
+**如果从源码安装：**
 ```bash
 python pdf-split.py <input.pdf> -o <output_dir>
 ```
@@ -90,17 +114,20 @@ python pdf-split.py <input.pdf> \
 ### 示例
 
 ```bash
-# 基本拆分
-python pdf-split.py document.pdf -o ./result
+# 基本拆分（PyPI安装后）
+pdf-split document.pdf -o ./result
 
 # 指定文档类型
-python pdf-split.py academic_papers.pdf -o ./result --document-type academic
+pdf-split academic_papers.pdf -o ./result --document-type academic
 
 # 使用已有OCR结果（跳过OCR步骤）
-python pdf-split.py document.pdf -o ./result --ocr-json ./ocr_result.json
+pdf-split document.pdf -o ./result --ocr-json ./ocr_result.json
 
 # 大文件优化（降低内存使用）
-python pdf-split.py large_document.pdf -o ./result --image-scale 0.5 --batch-size 1
+pdf-split large_document.pdf -o ./result --image-scale 0.5
+
+# 从源码运行（如果从GitHub克隆）
+python pdf-split.py document.pdf -o ./result
 ```
 
 ## 输出结果
@@ -227,9 +254,16 @@ python test_api.py
 3. **页面覆盖**：工具会验证所有页面都被覆盖，无遗漏无重叠
 4. **文件命名**：文件名中的特殊字符会被替换为下划线，确保文件系统兼容性
 
+## 📦 PyPI包信息
+
+- **PyPI包名**: `pdf-intelligent-splitter`
+- **PyPI地址**: https://pypi.org/project/pdf-intelligent-splitter/
+- **安装命令**: `pip install pdf-intelligent-splitter`
+- **GitHub地址**: https://github.com/loudlous/pdf-intelligent-splitter
+
 ## 许可证
 
-本工具为内部使用工具，请遵守相关使用规范。
+MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 更新日志
 
