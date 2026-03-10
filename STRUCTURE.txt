@@ -1,0 +1,26 @@
+PDF拆分工具目录结构
+====================
+
+pdf-split-tool/
+├── pdf-split.py              # 主程序文件
+├── requirements.txt           # Python依赖包
+├── test_api.py               # API测试脚本
+├── README.md                 # 项目说明文档
+├── CHANGELOG.md              # 更新日志
+├── .gitignore                # Git忽略文件
+└── docs/                     # 文档目录
+    ├── USAGE.md              # 使用说明
+    ├── ARCHITECTURE.md       # 架构说明
+    └── CONFIG.md             # 配置说明
+
+文件说明：
+---------
+pdf-split.py      - 核心拆分脚本，包含OCR、目录检测、LLM拆分等功能
+requirements.txt  - Python依赖包列表
+test_api.py      - 用于测试LLM API连接的脚本
+README.md        - 项目主文档，包含快速开始、安装、使用等
+CHANGELOG.md     - 版本更新日志
+.gitignore       - Git版本控制忽略文件配置
+docs/USAGE.md    - 详细使用说明和示例
+docs/ARCHITECTURE.md - 系统架构和设计说明
+docs/CONFIG.md   - 配置参数和环境变量说明

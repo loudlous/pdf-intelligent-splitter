@@ -1,0 +1,19 @@
+# 基础依赖
+numpy==1.26.4
+Pillow==11.3.0
+psutil==5.9.8
+tqdm==4.67.1
+
+# PDF处理（必需）
+pymupdf>=1.23.0
+
+# OCR支持（必需）
+paddlepaddle>=2.5.0
+paddleocr>=2.7.0
+
+# 大模型API（必需）
+openai>=1.0.0
+
+# 可选依赖
+python-dotenv>=1.0.0  # 环境变量支持
+
